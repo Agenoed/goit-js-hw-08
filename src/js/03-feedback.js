@@ -17,8 +17,8 @@ function getData() {
   const getTextData = JSON.parse(localStorage.getItem('feedback-form-state'));
 
   if (getTextData) {
-    form.email.value = getTextData.email;
-    form.message.value = getTextData.message;
+    form.email.value = !!getTextData.email ? getTextData.email : '';
+    form.message.value = !!getTextData.message ? getTextData.message : '';
   }
 }
 
